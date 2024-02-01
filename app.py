@@ -37,6 +37,7 @@ if __name__ == "__main__":
     csv_url = (
         "https://raw.githubusercontent.com/mlflow/mlflow/master/tests/datasets/winequality-red.csv"
     )
+    
     try:
         data = pd.read_csv(csv_url, sep=";")
     except Exception as e:
@@ -79,8 +80,7 @@ if __name__ == "__main__":
         #signature = infer_signature(train_x, predictions)
 
         ## For Remote server only(DAGShub)
-
-        remote_server_uri="https://dagshub.com/krishnaik06/mlflowexperiments.mlflow"
+        remote_server_uri="https://dagshub.com/aravindchinnu/Mlflow_Dagshub.mlflow"
         mlflow.set_tracking_uri(remote_server_uri)
 
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
